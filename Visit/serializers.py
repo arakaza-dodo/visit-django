@@ -73,7 +73,28 @@ class eventSerializer(serializers.ModelSerializer):
 class lieux_de_loisirsSerializer(serializers.ModelSerializer):
     class Meta:
          model = lieux_de_loisirs
-         fields = "__all__"               
+         fields = "__all__"     
+
+
+class ShopSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = Shop
+         fields = "__all__"   
+
+class HospitalSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = Hospital
+         fields = "__all__"   
+
+class ProvinceSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = Province
+         fields = "__all__" 
+
+class quartierSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = quartier
+         fields = "__all__"                
 
 
 

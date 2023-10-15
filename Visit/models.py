@@ -109,12 +109,36 @@ class lieux_de_loisirs(models.Model):
     close_time = models.DateTimeField()
 
     def str(self):
-        return self.name   
-       
+        return self.name 
 
-# class Role(models.Model):
-#     user = models.ForeignKey(User,on_delete=models.PROTECT)
-#     nom = models.CharField(max_length=100)   
+
+class Shop(models.Model):
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    # state = models.CharField(max_length=2)
+    # zip_code = models.CharField(max_length=10)  
+
+
+class Hospital(models.Model):
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    # state = models.CharField(max_length=2)
+    # zip_code = models.CharField(max_length=10)
+    # myapp/models.py
+
+class Province(models.Model):
+    name = models.CharField(max_length=255)
+
+class quartier(models.Model):
+    name = models.CharField(max_length=255)
+
+
+
+class Role(models.Model):
+    user = models.ForeignKey(User,on_delete=models.PROTECT)
+    nom = models.CharField(max_length=100)   
 
 
 

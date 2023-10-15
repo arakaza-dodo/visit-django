@@ -66,13 +66,40 @@ class eventViewset(viewsets.ModelViewSet):
     queryset = event.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = eventSerializer  
-
+    serializer_class = eventSerializer 
+    
 class lieux_de_loisirsViewset(viewsets.ModelViewSet):
-    queryset = event.objects.all()
+    queryset = lieux_de_loisirs.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class =lieux_de_loisirsSerializer       
+    serializer_class =lieux_de_loisirsSerializer 
+
+class ShopViewset(viewsets.ModelViewSet):
+    queryset = Shop.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
+    authentication_classes =JWTAuthentication, SessionAuthentication
+    serializer_class = ShopSerializer       
+
+
+class HopitalViewset(viewsets.ModelViewSet):
+    queryset = Hospital.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
+    authentication_classes =JWTAuthentication, SessionAuthentication
+    serializer_class =HospitalSerializer       
+
+class ProvinceViewset(viewsets.ModelViewSet):
+    queryset = Province.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
+    authentication_classes =JWTAuthentication, SessionAuthentication
+    serializer_class =ProvinceSerializer   
+
+class quartierViewset(viewsets.ModelViewSet):
+    queryset = quartier.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
+    authentication_classes =JWTAuthentication, SessionAuthentication
+    serializer_class = quartierSerializer      
+    
+
 
 
 
