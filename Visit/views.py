@@ -17,8 +17,9 @@ class HotelsViewset(viewsets.ModelViewSet):
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class = HotelsSerializer
-    # filter_backends = [DjangoFilterBackend]
-    # filterset_fields = ['url', 'views']
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']
 
 
 class serviceViewset(viewsets.ModelViewSet):
@@ -39,68 +40,110 @@ class RestaurantViewset(viewsets.ModelViewSet):
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class = RestaurantSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']
 
 class FoodViewset(viewsets.ModelViewSet):
     queryset = Food.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = FoodSerializer    
+    serializer_class = FoodSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']    
 
 class ReservationViewset(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class = ReservationSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']
 
 
 class TouristSiteViewset(viewsets.ModelViewSet):
     queryset = TouristSite.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = TouristSiteSerializer 
+    serializer_class = TouristSiteSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name'] 
 
 class barViewset(viewsets.ModelViewSet):
     queryset = bar.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class = barSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']
 
 class eventViewset(viewsets.ModelViewSet):
     queryset = event.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = eventSerializer 
+    serializer_class = eventSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name'] 
     
 class lieux_de_loisirsViewset(viewsets.ModelViewSet):
     queryset = lieux_de_loisirs.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class =lieux_de_loisirsSerializer 
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']
 
 class ShopViewset(viewsets.ModelViewSet):
     queryset = Shop.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = ShopSerializer       
+    serializer_class = ShopSerializer 
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']      
 
 
 class HopitalViewset(viewsets.ModelViewSet):
     queryset = Hospital.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class =HospitalSerializer       
+    serializer_class =HospitalSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']       
 
 class ConferenceViewset(viewsets.ModelViewSet):
     queryset =Conference.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class =ConferenceSerializer   
+    serializer_class =ConferenceSerializer 
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']  
 
 class CultureViewset(viewsets.ModelViewSet):
     queryset = Culture.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = CultureSerializer      
+    serializer_class = CultureSerializer 
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name'] 
+
+class EgliseViewset(viewsets.ModelViewSet):
+    queryset = Eglise.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
+    authentication_classes =JWTAuthentication, SessionAuthentication
+    serializer_class = EgliseSerializer   
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name', 'adress']
+    search_fields = ['name']  
     
 
 

@@ -115,6 +115,7 @@ class lieux_de_loisirs(models.Model):
 class Shop(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='shop_photos/')
     city = models.CharField(max_length=255)
    
 
@@ -122,6 +123,7 @@ class Shop(models.Model):
 class Hospital(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='Hopital_photos/')
     city = models.CharField(max_length=255)
   
 
@@ -133,6 +135,7 @@ class Conference(models.Model):
     date_debut = models.DateTimeField()
     date_fin = models.DateTimeField()
     description = models.TextField(default="", blank=True)
+    photo = models.ImageField(upload_to='conference_photos/')
     url_site = models.URLField(default="", blank=True)
 
     def __str__(self):
@@ -143,7 +146,22 @@ class Conference(models.Model):
 class Culture(models.Model):
     nom = models.CharField(max_length=100)
     description = models.TextField()
+    photo = models.ImageField(upload_to='culture-gakondo_photos/')
     date_creation = models.DateField()
+
+    def __str__(self):
+        return self.nom
+    
+
+class Eglise(models.Model):
+    nom = models.CharField(max_length=100)
+    adresse = models.CharField(max_length=200)
+    ville = models.CharField(max_length=100)
+    pays = models.CharField(max_length=100)
+    date_creation = models.DateField()
+    pasteur_principal = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='eglise_photos/')
+    heures_de_culte = models.CharField(max_length=200)
 
     def __str__(self):
         return self.nom

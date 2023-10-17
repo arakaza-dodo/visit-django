@@ -94,7 +94,12 @@ class ConferenceSerializer(serializers.ModelSerializer):
 class CultureSerializer(serializers.ModelSerializer):
     class Meta:
          model = Culture
-         fields = "__all__"                
+         fields = "__all__"  
+
+class EgliseSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = Eglise
+         fields = "__all__"              
 
 
 

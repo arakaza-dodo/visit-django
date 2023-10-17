@@ -17,7 +17,8 @@ router.register("lieux_de_loisirs", lieux_de_loisirsViewset)
 router.register("Shop", ShopViewset)  
 router.register("Hopital", HopitalViewset)  
 router.register("Conference", ConferenceViewset)  
-router.register("culture", CultureViewset)            
+router.register("culture", CultureViewset)  
+router.register("Eglise", EgliseViewset)            
 
 
 
