@@ -86,14 +86,14 @@ class HospitalSerializer(serializers.ModelSerializer):
          model = Hospital
          fields = "__all__"   
 
-class ProvinceSerializer(serializers.ModelSerializer):
+class ConferenceSerializer(serializers.ModelSerializer):
     class Meta:
-         model = Province
+         model = Conference
          fields = "__all__" 
 
-class quartierSerializer(serializers.ModelSerializer):
+class CultureSerializer(serializers.ModelSerializer):
     class Meta:
-         model = quartier
+         model = Culture
          fields = "__all__"                
 
 

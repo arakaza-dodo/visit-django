@@ -116,23 +116,43 @@ class Shop(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
-    # state = models.CharField(max_length=2)
-    # zip_code = models.CharField(max_length=10)  
+   
 
 
 class Hospital(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
-    # state = models.CharField(max_length=2)
-    # zip_code = models.CharField(max_length=10)
-    # myapp/models.py
+  
 
-class Province(models.Model):
-    name = models.CharField(max_length=255)
+class Conference(models.Model):
+    nom_complet = models.CharField(max_length=300)
+    nom_court = models.CharField(max_length=30)
+    organiserpar = models.BooleanField(default=False)
+    ville = models.CharField(max_length=100)
+    date_debut = models.DateTimeField()
+    date_fin = models.DateTimeField()
+    description = models.TextField(default="", blank=True)
+    url_site = models.URLField(default="", blank=True)
 
-class quartier(models.Model):
-    name = models.CharField(max_length=255)
+    def __str__(self):
+        return f'{self.nom_complet} ({self.nom_court})'
+    
+    from django.db import models
+
+class Culture(models.Model):
+    nom = models.CharField(max_length=100)
+    description = models.TextField()
+    date_creation = models.DateField()
+
+    def __str__(self):
+        return self.nom
+    
+# class Province(models.Model):
+#     name = models.CharField(max_length=255)
+
+# class quartier(models.Model):
+#     name = models.CharField(max_length=255)
 
 
 

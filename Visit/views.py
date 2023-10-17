@@ -4,7 +4,8 @@ from .models import *
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.authentication import SessionAuthentication
-
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 from .serializers import *
 from rest_framework.permissions import *
 
@@ -16,6 +17,8 @@ class HotelsViewset(viewsets.ModelViewSet):
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class = HotelsSerializer
+    # filter_backends = [DjangoFilterBackend]
+    # filterset_fields = ['url', 'views']
 
 
 class serviceViewset(viewsets.ModelViewSet):
@@ -87,17 +90,17 @@ class HopitalViewset(viewsets.ModelViewSet):
     authentication_classes =JWTAuthentication, SessionAuthentication
     serializer_class =HospitalSerializer       
 
-class ProvinceViewset(viewsets.ModelViewSet):
-    queryset = Province.objects.all()
+class ConferenceViewset(viewsets.ModelViewSet):
+    queryset =Conference.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class =ProvinceSerializer   
+    serializer_class =ConferenceSerializer   
 
-class quartierViewset(viewsets.ModelViewSet):
-    queryset = quartier.objects.all()
+class CultureViewset(viewsets.ModelViewSet):
+    queryset = Culture.objects.all()
     permission_classes = IsAuthenticatedOrReadOnly,
     authentication_classes =JWTAuthentication, SessionAuthentication
-    serializer_class = quartierSerializer      
+    serializer_class = CultureSerializer      
     
 
 
