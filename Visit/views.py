@@ -106,6 +106,15 @@ class ShopViewset(viewsets.ModelViewSet):
     serializer_class = ShopSerializer 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['name', 'adress']
+    search_fields = ['name']
+
+class transportViewset(viewsets.ModelViewSet):
+    queryset = transport.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
+    authentication_classes =JWTAuthentication, SessionAuthentication
+    serializer_class = transportSerializer 
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['name']
     search_fields = ['name']      
 
 

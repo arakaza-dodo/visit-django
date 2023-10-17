@@ -14,11 +14,13 @@ router.register("reservation", ReservationViewset)
 router.register("TouristSite", TouristSiteViewset)
 router.register("bar", barViewset)
 router.register("lieux_de_loisirs", lieux_de_loisirsViewset)  
-router.register("Shop", ShopViewset)  
+router.register("Shop", ShopViewset)
+router.register("transport", transportViewset)    
 router.register("Hopital", HopitalViewset)  
 router.register("Conference", ConferenceViewset)  
 router.register("culture", CultureViewset)  
-router.register("Eglise", EgliseViewset)            
+router.register("Eglise", EgliseViewset)  
+          
 
 
 

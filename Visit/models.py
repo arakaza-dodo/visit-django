@@ -117,6 +117,18 @@ class Shop(models.Model):
     address = models.CharField(max_length=255)
     photo = models.ImageField(upload_to='shop_photos/')
     city = models.CharField(max_length=255)
+
+    def str(self):
+        return self.name
+
+class transport(models.Model):
+    name = models.CharField(max_length=50)
+    # address = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='transport_photos/')
+    number = models.PositiveIntegerField()
+
+    def str(self):
+        return self.name
    
 
 

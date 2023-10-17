@@ -80,6 +80,11 @@ class ShopSerializer(serializers.ModelSerializer):
     class Meta:
          model = Shop
          fields = "__all__"   
+         
+class transportSerializer(serializers.ModelSerializer):
+    class Meta:
+         model = transport
+         fields = "__all__" 
 
 class HospitalSerializer(serializers.ModelSerializer):
     class Meta:
